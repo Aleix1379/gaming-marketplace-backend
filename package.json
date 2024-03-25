@@ -1,7 +1,7 @@
 {
-  "name": "hexagonal-architecture-typescript-service-skeleton",
+  "name": "digital-game-marketplace",
   "version": "1.0.0",
-  "description": "Skeleton for new typescript services based on hexagonal architecture",
+  "description": "This is the backend of a marketplace for digital video games. It's made with Node.js, Express, and TypeScript to practice Test-Driven Development (TDD) and Hexagonal Architecture.",
   "main": "src/index.js",
   "scripts": {
     "start": "node dist/src/main.js",
@@ -17,23 +17,23 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AlbertHernandez/hexagonal-architecture-typescript-service-skeleton.git"
+    "url": "git+https://github.com/Aleix1379/gaming-marketplace-backend.git"
   },
   "keywords": [
     "typescript",
     "hexagonal architecture",
     "skeleton"
   ],
-  "author": "alberthernandezdev@gmail.com",
+  "author": "aleixmp1379@gmail.com",
   "license": "MIT",
   "engines": {
     "node": ">=18.0.0",
     "npm": ">=9.3.0"
   },
   "bugs": {
-    "url": "https://github.com/AlbertHernandez/hexagonal-architecture-typescript-service-skeleton/issues"
+    "url": "https://github.com/Aleix1379/gaming-marketplace-backend/issues"
   },
-  "homepage": "https://github.com/AlbertHernandez/hexagonal-architecture-typescript-service-skeleton#readme",
+  "homepage": "https://github.com/Aleix1379/gaming-marketplace-backend#readme",
   "devDependencies": {
     "@commitlint/cli": "^17.4.2",
     "@commitlint/config-conventional": "^17.4.2",
