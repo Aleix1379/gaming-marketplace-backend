@@ -4,6 +4,7 @@ import bodyParser from "body-parser";
 import express from "express";
 
 import { config } from "./shared/infrastructure/config";
+import db from "./shared/infrastructure/database/sequelize/models";
 import { userRouter } from "./users/infrastructure/rest-api/user-router";
 
 function bootstrap() {
@@ -12,11 +13,22 @@ function bootstrap() {
   app.use(bodyParser.json());
   app.use("/users", userRouter);
 
-  const { port } = config.server;
+  if (!db.sequelize) {
+    throw new Error("Sequelize instance not found");
+  }
 
-  app.listen(port, () => {
-    console.log(`[APP] - Starting application on port ${port}`);
-  });
+  db.sequelize
+    .sync()
+    .then(() => {
+      const { port } = config.server;
+
+      app.listen(port, () => {
+        console.log(`[APP] - Starting application on port ${port}`);
+      });
+    })
+    .catch((error: Error) => {
+      console.error("Unable to connect to the database:", error);
+    });
 }
 
 bootstrap();
